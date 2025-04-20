@@ -1,15 +1,61 @@
-export default function Contact() {
+// src/components/Contact.tsx
+/*import { content } from '../data/content';
+
+export function Contact() {
   return (
-    <div className="container mx-auto py-16 px-4">
-      <h2 className="text-4xl font-bold text-verdeOK mb-8">Contacto</h2>
-      <form className="max-w-lg mx-auto flex flex-col space-y-4">
-        <input type="text" placeholder="Tu nombre" className="p-3 rounded bg-gray-800 text-white" />
-        <input type="email" placeholder="Tu email" className="p-3 rounded bg-gray-800 text-white" />
-        <textarea placeholder="Tu mensaje" className="p-3 rounded bg-gray-800 text-white" rows={4} />
-        <button type="submit" className="self-center bg-verdeOK hover:bg-[oklch(75%_0.2_136)] text-black px-6 py-2 rounded-full">
-          Enviar
-        </button>
-      </form>
-    </div>
+    <section id="contact" className="py-20 px-4 bg-gray-100">
+      <h2 className="text-3xl font-semibold text-center mb-8">Contáctame</h2>
+      <div className="max-w-md mx-auto space-y-4 text-center">
+        <p>
+          <strong>Email:</strong>{' '}
+          <a href={`mailto:${content.contact.email}`} className="text-accent hover:underline">
+            {content.contact.email}
+          </a>
+        </p>
+        <p>
+          <strong>Teléfono:</strong>{' '}
+          <a href={`tel:${content.contact.phone}`} className="text-accent hover:underline">
+            {content.contact.phone}
+          </a>
+        </p>
+        {content.contact.address && (
+          <p>
+            <strong>Dirección:</strong> {content.contact.address}
+          </p>
+        )}
+        {/* Si tienes un formulario, añádelo aquí *//*}
+      </div>
+    </section>
+  );
+}
+*/
+
+// src/components/Contact.tsx
+import { content } from '../data/content';
+
+export function Contact() {
+  return (
+    <section id="contact" className="py-24 bg-gray-100">
+      <div className="max-w-5xl mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold mb-8">Contáctame</h2>
+        <p className="mb-4">
+          <strong>Email:</strong>{' '}
+          <a href={`mailto:${content.contact.email}`} className="text-accent hover:underline">
+            {content.contact.email}
+          </a>
+        </p>
+        <p className="mb-4">
+          <strong>Teléfono:</strong>{' '}
+          <a href={`tel:${content.contact.phone}`} className="text-accent hover:underline">
+            {content.contact.phone}
+          </a>
+        </p>
+        {content.contact.address && (
+          <p>
+            <strong>Dirección:</strong> {content.contact.address}
+          </p>
+        )}
+      </div>
+    </section>
   );
 }
