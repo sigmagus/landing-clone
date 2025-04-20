@@ -49,6 +49,7 @@ export default function App() {
   );
 }*/
 // src/App.tsx
+// src/App.tsx
 import { NavBar }   from './components/NavBar';
 import { Hero }     from './components/Hero';
 import { Services } from './components/Services';
@@ -59,13 +60,13 @@ export default function App() {
   return (
     <div
       className="
-        min-h-screen                       /* ocupa toda la ventana */
-        bg-gradient-to-b                   /* degradado vertical */
-          from-[oklch(0%_0_0)]             /* negro puro OKLCH */
-          via-[oklch(8%_0.005_132)]        /* gris muy oscuro */
+        min-h-screen
+        bg-gradient-to-b
+          from-[oklch(0%_0_0)]
+          via-[oklch(8%_0.005_132)]
           to-[oklch(0%_0_0)]
         font-mono
-        text-[oklch(98%_0.01_30)]          /* texto casi blanco */
+        text-[oklch(98%_0.01_30)]
       "
     >
       <NavBar />
@@ -83,7 +84,7 @@ export default function App() {
           <section id="services" className="pt-20">
             <Services />
           </section>
-          
+
           <section id="contact" className="pt-20">
             <Contact />
           </section>
