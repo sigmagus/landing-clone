@@ -1,5 +1,4 @@
 // src/App.tsx
-/*import React from 'react'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
@@ -39,8 +38,8 @@ export default function App() {
       </main>
     </div>
   )
-}*/
-export default function App() {
+}
+/*export default function App() {
   return (
     <div className="min-h-screen bg-[#0f883a] flex items-center justify-center">
       <h1 className="text-5xl text-[#8b5cf6]">
@@ -48,4 +47,4 @@ export default function App() {
       </h1>
     </div>
   );
-}
+}*/
