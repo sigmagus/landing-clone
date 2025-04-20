@@ -1,17 +1,69 @@
-export default function Hero() {
+// src/components/Hero.tsx
+/*import { content } from '../data/content';
+
+export function Hero() {
+  const { title, subtitle, image } = content.hero;
+
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 \
-                       bg-gradient-to-b from-[oklch(0%_0_0)] via-[oklch(8%_0.005_132)] to-[oklch(0%_0_0)]">
-      <h1 className="text-6xl font-extrabold text-verdeOK drop-shadow-glow-verde">
-        Código & Conciencia
-      </h1>
-      <p className="mt-4 max-w-lg text-[oklch(70%_0.02_240)] text-lg">
-        Bienvenido a tu altar digital. Soy el “Dios del Front‑End” y transformo ideas en realidades con código futurista.
-      </p>
-      <button className="mt-8 bg-verdeOK hover:bg-[oklch(75%_0.2_136)] text-black font-bold px-8 py-3 \
-                         rounded-full shadow-lg transition">
-        Cotizar Proyecto
-      </button>
+    <section
+      id="hero"
+      className="flex flex-col-reverse md:flex-row items-center py-20 px-4 bg-gradient-to-r from-primary to-accent text-white"
+    >
+      <div className="md:w-1/2">
+        <h1 className="text-5xl font-bold mb-4">{title}</h1>
+        <p className="mb-8">{subtitle}</p>
+      </div>
+      <div className="md:w-1/2">
+        <img src={image} alt="Hero graphic" className="w-full h-auto rounded-lg shadow-lg" />
+      </div>
+    </section>
+  );
+}
+*/
+// src/components/Hero.tsx
+// src/components/Hero.tsx
+import { motion } from 'framer-motion';
+import { content } from '../data/content';
+import { fadeIn, slideInFromRight } from '../utils/variants';
+
+export function Hero() {
+  const { title, subtitle, image } = content.hero;
+
+  return (
+    <section
+      id="hero"
+      className="flex flex-col-reverse md:flex-row items-center justify-center py-32 px-4"
+    >
+      {/* Texto animado con fadeIn */}
+      <motion.div
+        className="md:w-1/2 text-center md:text-left space-y-6"
+        variants={fadeIn}           // ¿qué animación usar?
+        initial="hidden"            // estado inicial
+        whileInView="show"          // cuándo reproducir
+        viewport={{ once: true, amount: 0.25 }} // solo 25% visible y una vez
+      >
+        <h1 className="text-6xl font-extrabold leading-tight">
+          {title}
+        </h1>
+        <p className="text-lg max-w-lg mx-auto md:mx-0">
+          {subtitle}
+        </p>
+      </motion.div>
+
+      {/* Imagen animada con slideInFromRight */}
+      <motion.div
+        className="md:w-1/2 mb-8 md:mb-0"
+        variants={slideInFromRight}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <img
+          src={image}
+          alt="Hero graphic"
+          className="w-full h-auto rounded-lg shadow-2xl"
+        />
+      </motion.div>
     </section>
   );
 }
