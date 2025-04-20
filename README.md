@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# Landing Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una plantilla de landing page en React + Tailwind CSS + Framer Motion, totalmente data‑driven y responsive.
 
-Currently, two official plugins are available:
+## 🚀 Instalación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+git clone https://github.com/sigmagus/landing-clone.git
+cd landing-clone
+npm install
+npm run dev
+Abre http://localhost:3000 para ver tu landing en el navegador.
 
-## Expanding the ESLint configuration
+🔧 Edición de contenido
+Todo el contenido (títulos, textos, enlaces, rutas de imágenes) está en:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+src/data/content.ts
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Modifica ese archivo y guarda para ver los cambios reflejados automáticamente.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🎨 Personalización de tema
+Colores, tipografías y breakpoints están en:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+tailwind.config.js
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+colors.primary, colors.accent, colors.highlight
+
+Fuentes en fontFamily
+
+Breakpoints (screens) y container
+
+Ejecuta npm run dev tras cualquier cambio de configuración.
+
+🛠 Build y despliegue
+Para producción:
+
+bash
+Copy
+Edit
+npm run build
+npm run start
+Puedes desplegar en Vercel o Netlify apuntando al build generado.
+
+📦 Uso como template
+Para clonar sin historial:
+
+bash
+Copy
+Edit
+npx degit sigmagus/landing-clone my-landing
+cd my-landing
+npm install
+npm run dev
+⚖️ Licencia
+MIT © sigmagus
