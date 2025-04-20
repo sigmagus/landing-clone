@@ -1,6 +1,6 @@
 // src/App.tsx
 // src/App.tsx
-import { NavBar }   from './components/NavBar';
+/*import { NavBar }   from './components/NavBar';
 import { Hero }     from './components/Hero';
 import { Services } from './components/Services';
 import { Projects } from './components/Projects';
@@ -12,7 +12,7 @@ export default function App() {
       className="
         font-mono
         text-[oklch(98%_0.01_30)] /* texto casi blanco en OKLCH */
-      "
+     /* "
   
     >
       <NavBar />
@@ -37,6 +37,7 @@ export default function App() {
     </div>
   );
 }
+*/
 
 /*export default function App() {
   return (
@@ -47,3 +48,47 @@ export default function App() {
     </div>
   );
 }*/
+// src/App.tsx
+import { NavBar }   from './components/NavBar';
+import { Hero }     from './components/Hero';
+import { Services } from './components/Services';
+import { Projects } from './components/Projects';
+import { Contact }  from './components/Contact';
+
+export default function App() {
+  return (
+    <div
+      className="
+        min-h-screen                       /* ocupa toda la ventana */
+        bg-gradient-to-b                   /* degradado vertical */
+          from-[oklch(0%_0_0)]             /* negro puro OKLCH */
+          via-[oklch(8%_0.005_132)]        /* gris muy oscuro */
+          to-[oklch(0%_0_0)]
+        font-mono
+        text-[oklch(98%_0.01_30)]          /* texto casi blanco */
+      "
+    >
+      <NavBar />
+
+      <main className="pt-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <section id="hero" className="pt-20">
+            <Hero />
+          </section>
+
+          <section id="projects" className="pt-20">
+            <Projects />
+          </section>
+
+          <section id="services" className="pt-20">
+            <Services />
+          </section>
+          
+          <section id="contact" className="pt-20">
+            <Contact />
+          </section>
+        </div>
+      </main>
+    </div>
+  );
+}
